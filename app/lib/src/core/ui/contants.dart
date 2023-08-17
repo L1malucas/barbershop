@@ -13,5 +13,5 @@ sealed class FontsContants {
 }
 
 sealed class LocalHost {
-  static const ip = '192.168.1.1:8080';
+  static const ip = 'http://localhost:8080';
 }

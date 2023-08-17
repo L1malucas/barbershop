@@ -1,10 +1,11 @@
+import 'package:barbershop/src/core/ui/contants.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 
 final class RestClient extends DioForNative {
   RestClient()
       : super(BaseOptions(
-            baseUrl: 'http://192.168.1.1:8080',
+            baseUrl: LocalHost.ip,
             connectTimeout: const Duration(seconds: 10),
             receiveTimeout: const Duration(seconds: 60))) {
     interceptors
