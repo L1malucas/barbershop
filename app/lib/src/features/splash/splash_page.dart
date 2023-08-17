@@ -1,3 +1,4 @@
+import 'package:barbershop/src/features/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,8 +17,8 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _scale = 1;
-        _animationOpacityLogo = 1;
+        _scale = 1.0;
+        _animationOpacityLogo = 1.0;
       });
     });
     super.initState();
@@ -37,6 +38,22 @@ class _SplashPageState extends State<SplashPage> {
         ),
         child: Center(
           child: AnimatedOpacity(
+            onEnd: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  PageRouteBuilder(
+                    settings: const RouteSettings(name: '/auth/login'),
+                    pageBuilder: (context, animation, secondaryAnimation) {
+                      return const LoginPage();
+                    },
+                    transitionsBuilder: (_, animation, __, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                  (route) => false);
+            },
             curve: Curves.easeIn,
             opacity: _animationOpacityLogo,
             duration: const Duration(seconds: 3),
