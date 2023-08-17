@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 sealed class ColorsContants {
   static const brown = Color(0xFFB07B01);
   static const grey = Color(0xFF999999);
@@ -11,4 +10,8 @@ sealed class ColorsContants {
 
 sealed class FontsContants {
   static const fontFamily = 'Poppins';
+}
+
+sealed class LocalHost {
+  static const ip = '192.168.1.1:8080';
 }
