@@ -29,7 +29,7 @@ class LoginPage extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('assets/images/imgLogo.png'),
+                        Image.asset(ImageConstants.imageLogo),
                         FixedSpacer.vSmall,
                         TextFormField(
                           decoration: const InputDecoration(

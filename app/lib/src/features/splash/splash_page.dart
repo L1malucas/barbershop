@@ -1,3 +1,4 @@
+import 'package:barbershop/src/core/ui/contants.dart';
 import 'package:barbershop/src/features/auth/login/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class _SplashPageState extends State<SplashPage> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'assets/images/background_image_chair.jpg',
+              ImageConstants.backgroundChair,
             ),
             fit: BoxFit.cover,
           ),
@@ -63,7 +64,7 @@ class _SplashPageState extends State<SplashPage> {
               curve: Curves.linearToEaseOut,
               duration: const Duration(seconds: 3),
               child: Image.asset(
-                'assets/images/imgLogo.png',
+               ImageConstants.imageLogo,
                 fit: BoxFit.cover,
               ),
             ),
