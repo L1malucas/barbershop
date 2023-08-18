@@ -10,13 +10,21 @@ class BaseUserModel {
     required this.email,
     this.avatar,
   });
+
+  factory BaseUserModel.fromMap(Map<String, dynamic> json) {
+    return switch (json['profile']) {
+      'ADM' => BaseUserModel.fromMap(json),
+      'EMPLOYEE' => BaseUserModel.fromMap(json),
+      _ => throw ArgumentError('User profile not found')
+    };
+  }
 }
 
 class AdmUserModel extends BaseUserModel {
   final List<String>? workDays;
   final List<int>? workHours;
 
-  AdmUserModel(  
+  AdmUserModel(
       {this.workDays,
       this.workHours,
       super.avatar,
