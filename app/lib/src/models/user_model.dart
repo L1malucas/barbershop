@@ -16,7 +16,7 @@ class AdmUserModel extends BaseUserModel {
   final List<String>? workDays;
   final List<int>? workHours;
 
-  AdmUserModel(
+  AdmUserModel(  
       {this.workDays,
       this.workHours,
       super.avatar,
